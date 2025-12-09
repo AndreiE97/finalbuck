@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoppin' Haiku - A Buck For Thought</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="haiku-page">
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+        <a href="mrbuck.html" class="exit-tab">Exit</a>
+        <div class="nav-tabs-center">
+            <a href="introduction.html" class="nav-tab">Introduction</a>
+            <a href="haiku.html" class="nav-tab active">Hoppin' Haiku</a>
+            <a href="gallery.html" class="nav-tab">Gallery</a>
+            <a href="dear-buck.html" class="nav-tab">Dear Buck</a>
+        </div>
+    </nav>
+
+    <!-- Haiku Content -->
+    <div class="haiku-container">
+        <div class="haiku-section">
+            <h2>Hoppin' Haiku</h2>
+            <button class="generate-haiku-button" id="generateHaikuBtn">Generate Hoppin' Haiku</button>
+            <div class="haiku-display-container">
+                <div class="haiku-image-container">
+                    <img id="haikuImage" src="" alt="Mr. Buck" class="haiku-image" style="display: none;">
+                </div>
+                <div class="haiku-text-container">
+                    <div id="haikuText" class="haiku-text-display"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Cheerios -->
+    <img src="Images/cheerio1.png" alt="" class="hidden-cheerio" style="position: fixed; top: 18%; left: -26px; width: 32px; height: 32px; cursor: pointer; z-index: 50; opacity: 0.35;">
+    <img src="Images/cheerio1.png" alt="" class="hidden-cheerio" style="position: fixed; bottom: 12%; right: -30px; width: 26px; height: 26px; cursor: pointer; z-index: 50; opacity: 0.3;">
+    <img src="Images/cheerio1.png" alt="" class="hidden-cheerio" style="position: fixed; top: 75%; left: -20px; width: 30px; height: 30px; cursor: pointer; z-index: 50; opacity: 0.325;">
+
+    <script src="cheerio-game.js"></script>
+    <script src="haiku-script.js"></script>
+</body>
+</html>

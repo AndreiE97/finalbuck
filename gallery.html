@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - A Buck For Thought</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="gallery-page">
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+        <a href="mrbuck.html" class="exit-tab">Exit</a>
+        <div class="nav-tabs-center">
+            <a href="introduction.html" class="nav-tab">Introduction</a>
+            <a href="haiku.html" class="nav-tab">Hoppin' Haiku</a>
+            <a href="gallery.html" class="nav-tab active">Gallery</a>
+            <a href="dear-buck.html" class="nav-tab">Dear Buck</a>
+        </div>
+    </nav>
+
+    <!-- Gallery Content -->
+    <div class="gallery-container">
+        <div class="gallery-header">
+            <h1 style="text-align: center; font-family: 'Times', 'Times New Roman', 'Garamond', 'Baskerville', serif; font-size: 3rem; font-weight: bold; font-style: italic; margin-bottom: 20px;">Gallery</h1>
+            <button class="draw-for-buck-button" id="drawTab">🖌 Draw for Buck</button>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-image="Images/buck1.jpg">
+                <img src="Images/buck1.jpg" alt="Mr. Buck">
+            </div>
+            <div class="gallery-item" data-image="Images/buck2.jpg">
+                <img src="Images/buck2.jpg" alt="Mr. Buck">
+            </div>
+            <div class="gallery-item" data-image="Images/buck3.jpg">
+                <img src="Images/buck3.jpg" alt="Mr. Buck">
+            </div>
+            <div class="gallery-item" data-image="Images/buck4.jpg">
+                <img src="Images/buck4.jpg" alt="Mr. Buck">
+            </div>
+            <div class="gallery-item" data-image="Images/buck5.jpg">
+                <img src="Images/buck5.jpg" alt="Mr. Buck">
+            </div>
+            <div class="gallery-item" data-image="Images/buck6.jpg">
+                <img src="Images/buck6.jpg" alt="Mr. Buck">
+            </div>
+            <div class="gallery-item" data-image="Images/buck7.jpg">
+                <img src="Images/buck7.jpg" alt="Mr. Buck">
+            </div>
+            <div class="gallery-item" data-image="Images/buck8.jpg">
+                <img src="Images/buck8.jpg" alt="Mr. Buck">
+            </div>
+            <div class="gallery-item" data-image="Images/buck9.jpg">
+                <img src="Images/buck9.jpg" alt="Mr. Buck">
+            </div>
+            <div class="gallery-item" data-image="Images/buck10.jpg">
+                <img src="Images/buck10.jpg" alt="Mr. Buck">
+            </div>
+            <div class="gallery-item" data-image="Images/buck11.jpg">
+                <img src="Images/buck11.jpg" alt="Mr. Buck">
+            </div>
+            <div class="gallery-item" data-image="Images/buck12.jpg">
+                <img src="Images/buck12.jpg" alt="Mr. Buck">
+            </div>
+            <div class="gallery-item" data-image="Images/buck13.jpg">
+                <img src="Images/buck13.jpg" alt="Mr. Buck">
+            </div>
+            <div class="gallery-item" data-image="Images/buck14.jpg">
+                <img src="Images/buck14.jpg" alt="Mr. Buck">
+            </div>
+        </div>
+    </div>
+
+    <!-- Image View Modal -->
+    <div id="imageModal" class="image-modal">
+        <button class="close-image-modal" id="closeImageModal">×</button>
+        <img id="modalImage" src="" alt="Mr. Buck" class="modal-image">
+    </div>
+    </div>
+
+    <!-- Draw for Buck Modal -->
+    <div id="drawModal" class="draw-modal">
+        <div class="draw-modal-content">
+            <button class="close-modal" id="closeModal">×</button>
+            
+            <!-- Drawing Canvas Section -->
+            <div id="drawingSection" class="drawing-section">
+                <h2 style="text-align: center; margin-bottom: 20px; font-family: 'Brush Script MT', cursive; font-size: 2rem;">Draw for Buck</h2>
+                
+                <!-- Drawing Tools -->
+                <div class="draw-tools">
+                    <div class="color-palette">
+                        <label>Color:</label>
+                        <input type="color" id="colorPicker" value="#000000">
+                        <div class="color-swatches">
+                            <div class="color-swatch" data-color="#000000" style="background-color: #000000;"></div>
+                            <div class="color-swatch" data-color="#FF0000" style="background-color: #FF0000;"></div>
+                            <div class="color-swatch" data-color="#00FF00" style="background-color: #00FF00;"></div>
+                            <div class="color-swatch" data-color="#0000FF" style="background-color: #0000FF;"></div>
+                            <div class="color-swatch" data-color="#FFFF00" style="background-color: #FFFF00;"></div>
+                            <div class="color-swatch" data-color="#FF00FF" style="background-color: #FF00FF;"></div>
+                            <div class="color-swatch" data-color="#00FFFF" style="background-color: #00FFFF;"></div>
+                            <div class="color-swatch" data-color="#FFA500" style="background-color: #FFA500;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="brush-controls">
+                        <label>Brush Size: <span id="brushSizeDisplay">5</span>px</label>
+                        <input type="range" id="brushSize" min="1" max="50" value="5">
+                    </div>
+                    
+                    <button class="tool-button" id="eraserBtn">Eraser</button>
+                </div>
+                
+                <!-- Canvas -->
+                <canvas id="drawCanvas" width="800" height="600"></canvas>
+                
+                <!-- Submit Button -->
+                <button class="give-button" id="giveToBuckBtn">Give To Buck</button>
+            </div>
+            
+            <!-- Result Section -->
+            <div id="resultSection" class="result-section" style="display: none;">
+                <div class="result-images">
+                    <img src="Images/buck8.jpg" alt="Mr. Buck" class="buck-result-image">
+                    <img id="submittedDrawing" alt="Your Drawing" class="drawing-result-image">
+                </div>
+                <div class="buck-message">
+                    <p id="buckMessageText">Mr. Buck <span id="buckAction"></span></p>
+                </div>
+                <button class="draw-again-button" id="drawAgainBtn">Draw Another Picture?🖌</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Cheerios -->
+    <img src="Images/cheerio1.png" alt="" class="hidden-cheerio" style="position: fixed; top: 22%; right: -32px; width: 28px; height: 28px; cursor: pointer; z-index: 50; opacity: 0.35;">
+    <img src="Images/cheerio1.png" alt="" class="hidden-cheerio" style="position: fixed; bottom: 15%; left: -28px; width: 31px; height: 31px; cursor: pointer; z-index: 50; opacity: 0.3;">
+    <img src="Images/cheerio1.png" alt="" class="hidden-cheerio" style="position: fixed; top: 88%; right: -24px; width: 27px; height: 27px; cursor: pointer; z-index: 50; opacity: 0.325;">
+
+    <script src="cheerio-game.js"></script>
+    <script src="draw-script.js"></script>
+    <script src="gallery-script.js"></script>
+</body>
+</html>
